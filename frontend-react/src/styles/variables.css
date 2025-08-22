@@ -1,0 +1,171 @@
+:root {
+  /* Paleta Principal - Azul Oscuro */
+  --primary-50:  #f2f7fa;
+  --primary-100: #dceaf2;
+  --primary-200: #b3d1e3;
+  --primary-300: #80aecf;
+  --primary-400: #4d85b3;
+  --primary-500: #004167; /* Color principal */
+  --primary-600: #00395a;
+  --primary-700: #00314d;
+  --primary-800: #00263d;
+  --primary-900: #001a29;
+
+  /* Azul Brillante (#3fa9f5) */
+  --blue-50:  #f3faff;
+  --blue-100: #e0f3fe;
+  --blue-200: #b9e3fc;
+  --blue-300: #85ccf9;
+  --blue-400: #56b7f7;
+  --blue-500: #3fa9f5; /* Color base */
+  --blue-600: #2793df;
+  --blue-700: #1c7cc0;
+  --blue-800: #15649c;
+  --blue-900: #0e456d;
+
+  /* Naranja (#ec6608) */
+  --orange-50:  #fff8f3;
+  --orange-100: #ffeede;
+  --orange-200: #ffd4b1;
+  --orange-300: #ffb37a;
+  --orange-400: #f98f3d;
+  --orange-500: #ec6608; /* Color base */
+  --orange-600: #d15407;
+  --orange-700: #b04306;
+  --orange-800: #8b3305;
+  --orange-900: #5c2103;
+
+  /* Morado (#951b81) */
+  --purple-50:  #fbf5fa;
+  --purple-100: #f5e6f3;
+  --purple-200: #ebcce8;
+  --purple-300: #d99bd4;
+  --purple-400: #b94bad;
+  --purple-500: #951b81; /* Color base */
+  --purple-600: #7f166e;
+  --purple-700: #68125a;
+  --purple-800: #4d0d42;
+  --purple-900: #32092c;
+
+  /* Azul Medio (#0075bc) */
+  --cyan-50:  #f2f9fc;
+  --cyan-100: #dff1f9;
+  --cyan-200: #b3dff1;
+  --cyan-300: #80c6e5;
+  --cyan-400: #4aa6d4;
+  --cyan-500: #0075bc; /* Color base */
+  --cyan-600: #0067a6;
+  --cyan-700: #00578d;
+  --cyan-800: #00446e;
+  --cyan-900: #002d49;
+
+  /* Grises Neutros */
+  --gray-50: #f8fafc;
+  --gray-100: #f1f5f9;
+  --gray-200: #e2e8f0;
+  --gray-300: #cbd5e1;
+  --gray-400: #94a3b8;
+  --gray-500: #64748b;
+  --gray-600: #475569;
+  --gray-700: #334155;
+  --gray-800: #1e293b;
+  --gray-900: #0f172a;
+
+  /* Estados */
+  --success-50: #f0fdf4;
+  --success-500: #22c55e;
+  --success-600: #16a34a;
+  --success-700: #15803d;
+
+  --error-50: #fef2f2;
+  --error-500: #ef4444;
+  --error-600: #dc2626;
+  --error-700: #b91c1c;
+
+  --warning-50: #fffbeb;
+  --warning-500: #f59e0b;
+  --warning-600: #d97706;
+  --warning-700: #b45309;
+
+  --info-50: #eff6ff;
+  --info-500: #3b82f6;
+  --info-600: #2563eb;
+  --info-700: #1d4ed8;
+
+  /* Espaciado */
+  --spacing-xs: 0.25rem;
+  /* 4px */
+  --spacing-sm: 0.5rem;
+  /* 8px */
+  --spacing-md: 0.8rem;
+  /* 16px */
+  --spacing-lg: 1.5rem;
+  /* 24px */
+  --spacing-xl: 2rem;
+  /* 32px */
+  --spacing-2xl: 2.5rem;
+  /* 40px */
+  --spacing-3xl: 3rem;
+  /* 48px */
+
+  /* Border Radius */
+  --radius-sm: 0.25rem;
+  /* 4px */
+  --radius-md: 0.375rem;
+  /* 6px */
+  --radius-lg: 0.5rem;
+  /* 8px */
+  --radius-xl: 0.75rem;
+  /* 12px */
+
+  /* Sombras Sutiles */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+
+  /* Transiciones */
+  --transition-fast: 150ms ease-in-out;
+  --transition-normal: 200ms ease-in-out;
+  --transition-slow: 300ms ease-in-out;
+
+  /* Tipografía */
+  --font-size-xs: 0.75rem;
+  /* 12px */
+  --font-size-sm: 0.875rem;
+  /* 14px */
+  --font-size-base: 1rem;
+  /* 16px */
+  --font-size-lg: 1.125rem;
+  /* 18px */
+  --font-size-xl: 1.25rem;
+  /* 20px */
+  --font-size-2xl: 1.5rem;
+  /* 24px */
+  --font-size-3xl: 1.875rem;
+  /* 30px */
+  --font-size-4xl: 2.25rem;
+  /* 36px */
+
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* Z-index */
+  --z-dropdown: 1000;
+  --z-sticky: 1020;
+  --z-fixed: 1030;
+  --z-modal: 1050;
+  --z-toast: 1080;
+}
+
+/* Variables para paleta azul suave */
+.container {
+  --glass-bg: rgba(59, 130, 246, 0.08);
+  --glass-border: rgba(59, 130, 246, 0.15);
+  --shadow-glass: 0 8px 32px rgba(59, 130, 246, 0.15);
+  --gradient-primary: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 50%, #93c5fd 100%);
+  --gradient-accent: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+  --gradient-bg: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 25%, #d4edfa 50%, #7dd3fc 75%, #75d2fa 100%);
+}

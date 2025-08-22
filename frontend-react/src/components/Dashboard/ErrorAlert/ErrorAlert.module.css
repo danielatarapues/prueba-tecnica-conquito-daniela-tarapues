@@ -1,0 +1,332 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  width: 100%;
+  padding: 2rem;
+}
+
+.errorCard {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  border-radius: 20px;
+  padding: 2rem;
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(239, 68, 68, 0.1);
+}
+
+.errorCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, 
+    var(--error-400), 
+    var(--orange-400), 
+    var(--error-400)
+  );
+  background-size: 200% 100%;
+  animation: errorShimmer 3s linear infinite;
+}
+
+@keyframes errorShimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.errorHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.errorIcon {
+  width: 64px;
+  height: 64px;
+  background: linear-gradient(135deg, var(--error-100), var(--error-200));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--error-600);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.errorIcon svg {
+  width: 32px;
+  height: 32px;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.errorContent {
+  text-align: center;
+}
+
+.errorTitle {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.375rem;
+  font-weight: 700;
+  color: var(--error-700);
+}
+
+.errorMessage {
+  margin: 0;
+  font-size: 1rem;
+  color: var(--gray-600);
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.errorActions {
+  margin-bottom: 1.5rem;
+}
+
+.retryButton {
+  background: linear-gradient(135deg, var(--error-500), var(--error-600));
+  color: white;
+  border: none;
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-md) var(--spacing-xl);
+  font-size: 0.95rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.retryButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(239, 68, 68, 0.3);
+}
+
+.retryButton:active {
+  transform: translateY(-1px);
+}
+
+.retryButton svg {
+  width: 18px;
+  height: 18px;
+  transition: transform 0.3s ease;
+}
+
+.retryButton:hover svg {
+  transform: rotate(90deg);
+}
+
+.errorSuggestions {
+  text-align: left;
+  background: rgba(248, 250, 252, 0.8);
+  border-radius: 12px;
+  padding: 1.25rem;
+  border: 1px solid rgba(156, 163, 175, 0.2);
+}
+
+.suggestionsTitle {
+  margin: 0 0 0.75rem 0;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--gray-700);
+}
+
+.suggestionsList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.suggestionsList li {
+  position: relative;
+  padding-left: 1.25rem;
+  font-size: 0.875rem;
+  color: var(--gray-600);
+  line-height: 1.5;
+  margin-bottom: 0.5rem;
+}
+
+.suggestionsList li:last-child {
+  margin-bottom: 0;
+}
+
+.suggestionsList li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: var(--error-500);
+  font-weight: 700;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    min-height: 300px;
+    padding: 1.5rem;
+  }
+
+  .errorCard {
+    padding: 1.5rem;
+    border-radius: 16px;
+    max-width: none;
+  }
+
+  .errorIcon {
+    width: 56px;
+    height: 56px;
+  }
+
+  .errorIcon svg {
+    width: 28px;
+    height: 28px;
+  }
+
+  .errorTitle {
+    font-size: 1.25rem;
+  }
+
+  .errorMessage {
+    font-size: 0.9375rem;
+  }
+
+  .errorSuggestions {
+    padding: 1rem;
+  }
+
+  .suggestionsTitle {
+    font-size: 0.875rem;
+  }
+
+  .suggestionsList li {
+    font-size: 0.8125rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    min-height: 250px;
+    padding: 1rem;
+  }
+
+  .errorCard {
+    padding: 1.25rem;
+    border-radius: 12px;
+  }
+
+  .errorHeader {
+    gap: 0.875rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .errorIcon {
+    width: 48px;
+    height: 48px;
+  }
+
+  .errorIcon svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .errorTitle {
+    font-size: 1.125rem;
+  }
+
+  .errorMessage {
+    font-size: 0.875rem;
+  }
+
+  .retryButton {
+    padding: 0.75rem 1.25rem;
+    font-size: 0.875rem;
+  }
+
+  .retryButton svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .errorActions {
+    margin-bottom: 1.25rem;
+  }
+
+  .errorSuggestions {
+    padding: 0.875rem;
+  }
+
+  .suggestionsTitle {
+    font-size: 0.8125rem;
+  }
+
+  .suggestionsList li {
+    font-size: 0.75rem;
+    padding-left: 1rem;
+  }
+}
+
+/* Mejoras de accesibilidad */
+@media (prefers-reduced-motion: reduce) {
+  .errorCard::before,
+  .errorIcon,
+  .retryButton,
+  .retryButton svg {
+    animation: none !important;
+    transition-duration: 0.1s !important;
+  }
+
+  .retryButton:hover {
+    transform: none !important;
+  }
+
+  .retryButton:hover svg {
+    transform: none !important;
+  }
+}
+
+/* Alto contraste */
+@media (prefers-contrast: high) {
+  .errorCard {
+    border-width: 2px;
+    border-color: var(--error-500);
+  }
+
+  .errorTitle {
+    color: var(--error-800) !important;
+    font-weight: 800;
+  }
+
+  .errorMessage,
+  .suggestionsTitle {
+    color: var(--gray-800) !important;
+    font-weight: 600;
+  }
+
+  .suggestionsList li {
+    color: var(--gray-700) !important;
+    font-weight: 500;
+  }
+}

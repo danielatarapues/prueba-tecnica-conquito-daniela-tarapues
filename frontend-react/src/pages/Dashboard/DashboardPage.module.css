@@ -1,0 +1,270 @@
+.container {
+  width: 100%;
+  background-color: #f2f3f7;
+  background-size: 400% 400%;
+  animation: gradientFlow 25s ease infinite;
+  padding: 1.5rem;
+  position: relative;
+  min-height: 100vh;
+}
+
+@keyframes gradientFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  25% {
+    background-position: 100% 50%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  75% {
+    background-position: 0% 100%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Sección de filtros debajo del header */
+.filtersSection {
+  margin-bottom: 2rem;
+  width: 100%;
+  max-width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Layout principal full width con contenedor */
+.mainContent {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 2rem;
+  align-items: start;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+/* Panel lateral para estadísticas rápidas */
+.sidePanel {
+  position: sticky;
+  top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Panel de contenido principal */
+.contentPanel {
+  min-height: 400px;
+}
+
+/* Estados de carga y error */
+.noDataAlert {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  border-radius: 20px;
+  padding: 3rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  margin-top: 2rem;
+  width: 100%;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.noDataContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.noDataIcon {
+  width: 64px;
+  height: 64px;
+  color: var(--gray-400);
+  margin-bottom: 0.5rem;
+}
+
+.noDataAlert h3 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--gray-700);
+}
+
+.noDataAlert p {
+  margin: 0;
+  color: var(--gray-600);
+  font-size: 1rem;
+  max-width: 400px;
+  line-height: 1.5;
+}
+
+.retryButton {
+  background: linear-gradient(135deg, var(--cyan-400), var(--cyan-600));
+  color: var(--cyan-50);
+  border: none;
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-md) var(--spacing-xl);
+  font-size: 0.95rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  margin-top: 1rem;
+}
+
+.retryButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
+}
+
+.retryButton svg {
+  width: 18px;
+  height: 18px;
+  transition: transform 0.3s ease;
+}
+
+.retryButton:hover svg {
+  transform: rotate(90deg);
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .mainContent {
+    grid-template-columns: 280px 1fr;
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .mainContent {
+    grid-template-columns: 260px 1fr;
+    gap: 1.5rem;
+  }
+
+  .container {
+    padding: 1.25rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .filtersSection {
+    margin-bottom: 1.5rem;
+  }
+
+  /* Layout vertical para móviles */
+  .mainContent {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 100%;
+  }
+
+  .sidePanel {
+    position: static;
+    order: 2;
+    width: 100%;
+  }
+
+  .contentPanel {
+    order: 1;
+    width: 100%;
+  }
+
+  .noDataAlert {
+    padding: 2rem;
+    margin-top: 1rem;
+  }
+
+  .noDataIcon {
+    width: 48px;
+    height: 48px;
+  }
+
+  .noDataAlert h3 {
+    font-size: 1.25rem;
+  }
+
+  .noDataAlert p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0.75rem;
+  }
+
+  .filtersSection {
+    margin-bottom: 1rem;
+  }
+
+  .mainContent {
+    gap: 1rem;
+  }
+
+  .noDataAlert {
+    padding: 1.5rem;
+    border-radius: 16px;
+  }
+
+  .noDataIcon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .noDataAlert h3 {
+    font-size: 1.125rem;
+  }
+
+  .noDataAlert p {
+    font-size: 0.875rem;
+  }
+
+  .retryButton {
+    padding: 0.75rem 1.25rem;
+    font-size: 0.875rem;
+  }
+
+  .retryButton svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+/* Mejoras de accesibilidad */
+@media (prefers-reduced-motion: reduce) {
+  .container,
+  .retryButton,
+  .retryButton svg {
+    animation: none !important;
+    transition-duration: 0.1s !important;
+  }
+}
+
+/* Alto contraste */
+@media (prefers-contrast: high) {
+  .noDataAlert {
+    border-width: 2px;
+    border-color: var(--primary-400);
+  }
+
+  .noDataAlert h3,
+  .noDataAlert p {
+    color: var(--primary-800) !important;
+  }
+}
